@@ -8,7 +8,7 @@ import ColorTheory from "../../assets/Color Theory.jpg";
 import NirmanaArchipelago from "../../assets/Nirmana Achipelago.jpg";
 import NirmanaTransformation from "../../assets/Nirmana Transformation.jpg";
 import Project5 from "../../assets/project5.jpg";
-import Navbar from "../Navbar/Navbar";
+
 
 interface ProjectDescription {
   paragraphs: string[];
@@ -262,9 +262,9 @@ const UniversityProject: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-black via-background-darker to-black">
       {/* Navbar */}
-      <div className="relative z-50">
+      {/* <div className="relative z-50">
         <Navbar />
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <motion.div
