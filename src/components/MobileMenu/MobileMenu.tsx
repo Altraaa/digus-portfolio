@@ -64,7 +64,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   ];
 
   const menuSosial = [
-    { link: "https://linked.com/Chandrawinata", label: "LinkedIn" },
+    { link: "https://www.linkedin.com/in/chandrawinata", label: "LinkedIn" },
     { link: "https://instagram.com/ditochandra_", label: "Instagram" },
   ]
 
@@ -166,7 +166,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               className="absolute bottom-8 left-8 right-8"
             >
               <Button variant="outline" className="w-full">
-                Download CV
+                <a href="https://drive.google.com/file/d/1ZXwBJvOMhd9hmhixDxmHYD8KbKPP3Nim/view" target="_blank">Download CV</a>
               </Button>
               <div className="flex justify-center gap-6 mt-6">
                 {menuSosial.map((social) => (
