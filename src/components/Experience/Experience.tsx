@@ -78,7 +78,7 @@ const Experience: React.FC = () => {
         className="text-center mb-16"
       >
         <span className="text-blue-400 uppercase text-sm tracking-widest">
-          Our Journey
+          My Journey
         </span>
         <h2 className="text-5xl font-semibold text-white mt-3">
           Achievements &{" "}

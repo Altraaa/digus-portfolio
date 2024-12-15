@@ -1,20 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
-import MobileMenu from '../MobileMenu/MobileMenu';
-import Button from '../ui/Button';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import Button from "../ui/Button";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!isHomePage) {
+      navigate('/', { state: { scrollToContact: true } });
+    } else {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <>
@@ -36,12 +51,14 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                DI
-                <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-                  GUS
+              <Link to="/" className="block">
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  DI
+                  <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                    GUS
+                  </span>
                 </span>
-              </span>
+              </Link>
               <motion.div
                 className="absolute -bottom-1 left-0 h-[2px] bg-highlight"
                 initial={{ width: 0 }}
@@ -56,18 +73,21 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="hidden md:flex items-center space-x-12"
             >
-              {["home", "about", "projects", "experience"].map((item) => (
+              {[
+                { path: "/", label: "home" },
+                { path: "/about", label: "about" },
+                { path: "/project", label: "project" },
+                { path: "/experience", label: "experience" }
+              ].map((item) => (
                 <Link
-                  key={item}
-                  to={item}
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={800}
+                  key={item.label}
+                  to={item.path}
                   className="relative group cursor-pointer px-1"
                 >
-                  <span className="text-sm uppercase tracking-wider text-gray-300 hover:text-white transition-colors">
-                    {item}
+                  <span className={`text-sm uppercase tracking-wider ${
+                    location.pathname === item.path ? "text-white" : "text-gray-300"
+                  } hover:text-white transition-colors`}>
+                    {item.label}
                   </span>
                   <motion.div
                     className="absolute -bottom-1 left-0 h-[1px] bg-highlight origin-left"
@@ -77,18 +97,23 @@ const Navbar: React.FC = () => {
                   />
                 </Link>
               ))}
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={800}
+              {isHomePage && (
+                <a
+                href="#contact"
+                onClick={handleContactClick}
                 className="relative group cursor-pointer px-1"
               >
                 <p className="text-sm uppercase tracking-wider text-gray-300 hover:text-white transition-colors">
                   contact
                 </p>
-              </Link>
+                <motion.div
+                  className="absolute -bottom-1 left-0 h-[1px] bg-highlight origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </a>
+              )}
             </motion.div>
 
             <motion.div
@@ -132,4 +157,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

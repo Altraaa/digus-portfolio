@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Dito from '../../assets/HeroUser.png';
+import Dito from '../../assets/HeroUserDito.png';
 import HeroImage from '../../assets/HeroImage.png';
 
 const Hero: React.FC = () => {

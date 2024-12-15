@@ -8,7 +8,7 @@ import { socialLinks } from '../../constants';
 
 export const Contact: React.FC = () => {
   return (
-    <section className="min-h-screen pt-20 pb-32 bg-gradient-to-b from-purple-800 to-black/50" id="contact">
+    <section className="min-h-screen pt-28 pb-32 bg-gradient-to-b from-purple-800 to-black/50" id="contact">
       <div className="container mx-auto px-6 lg:px-8 xl:px-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

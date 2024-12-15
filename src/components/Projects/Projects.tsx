@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface Project {
   id: number;
@@ -7,57 +8,55 @@ interface Project {
   category: string;
   image: string;
   description: string;
+  route: string;
 }
 
 const projects: Project[] = [
   {
     id: 1,
-    title: "Modern Villa",
-    category: "Residential",
+    title: "Graphics Design",
+    category: "Comercial",
     image:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Desain villa modern dengan konsep minimalis",
+    route: "/project/graphics"
   },
   {
     id: 2,
-    title: "Office Tower",
-    category: "Commercial",
+    title: "Rendering Project",
+    category: "Job",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Gedung perkantoran dengan teknologi smart building",
+    route: "/project/rendering"
   },
   {
     id: 3,
-    title: "Eco House",
+    title: "Residential Project",
     category: "Residential",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Rumah ramah lingkungan dengan sistem energi terbarukan",
+    route: "/project/residential"
   },
   {
     id: 4,
-    title: "Luxury Apartment",
-    category: "Residential",
+    title: "School Project",
+    category: "School",
     image:
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Apartemen mewah dengan sentuhan modern minimalis",
+    route: "/project/school"
   },
   {
     id: 5,
-    title: "Creative Studio",
-    category: "Commercial",
+    title: "University Project",
+    category: "University",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Studio kreatif dengan konsep open space",
-  },
-  {
-    id: 6,
-    title: "Urban Loft",
-    category: "Residential",
-    image:
-      "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Loft modern dengan sentuhan industrial",
-  },
+    route: "/university"
+  }
 ];
 
 const container = {
@@ -142,7 +141,7 @@ const Projects: React.FC = () => {
           />
         </AnimatePresence>
       </motion.div>
-      
+
       {/* Bottom Gradient Overlay */}
       <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-b from-transparent via-gray-900/50 to-gray-900 z-10" />
 
@@ -156,7 +155,7 @@ const Projects: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-light mb-4">
-              Our{" "}
+              My{" "}
               <span className="font-bold bg-gradient-to-r from-primary via-highlight to-accent bg-clip-text text-transparent">
                 Projects
               </span>
@@ -349,6 +348,15 @@ const Projects: React.FC = () => {
                             >
                               {project.category}
                             </motion.span>
+                            <div className={`mt-4 transition-all duration-300 ${
+                              selectedId === project.id 
+                                ? 'opacity-100' 
+                                : 'opacity-0 group-hover:opacity-100'
+                            }`}>
+                              <button className="bg-highlight/20 hover:bg-highlight/30 text-highlight px-4 py-2 rounded-lg text-sm transition-colors duration-300">
+                                <Link to={project.route}>See Project</Link>
+                              </button>
+                            </div>
                           </div>
                         </motion.div>
                       ) : (
