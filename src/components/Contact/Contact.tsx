@@ -8,8 +8,8 @@ import { socialLinks } from '../../constants';
 
 export const Contact: React.FC = () => {
   return (
-    <section className="min-h-screen pt-20 pb-32 bg-gradient-to-b from-primary to-black/50" id="contact">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="min-h-screen pt-20 pb-32 bg-gradient-to-b from-purple-800 to-black/50" id="contact">
+      <div className="container mx-auto px-6 lg:px-8 xl:px-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ export const Contact: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-light mb-4">
-            Get in <span className="font-bold bg-gradient-to-r from-secondary via-highlight to-accent bg-clip-text text-transparent">Touch</span>
+            Get in <span className="font-bold bg-gradient-to-r from-primary via-highlight to-accent bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-white max-w-2xl mx-auto">
             Let's discuss your project and bring your vision to life.

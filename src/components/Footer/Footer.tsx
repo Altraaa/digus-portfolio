@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 const Footer: React.FC = () => {
   return (
     <footer className="relative py-20 overflow-hidden bg-gradient-to-b from-black/50 to-black/90">
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-8 xl:px-24">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Section */}

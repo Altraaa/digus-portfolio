@@ -59,8 +59,11 @@ const organizations: Organization[] = [
 
 const Experience: React.FC = () => {
   return (
-    <section className="py-32 px-6 bg-gradient-to-b from-black/30 to-primary" id="experience">
-      <div className="max-w-7xl mx-auto">
+    <section
+      className="py-32 px-6 bg-gradient-to-b from-purple-500 to-purple-800"
+      id="experience"
+    >
+      <div className="container mx-auto px-6 lg:px-8 xl:px-24">
         {/* Achievements Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,9 +71,12 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-24"
         >
-          <span className="text-highlight text-xl uppercase tracking-wider mb-4 block">Our Journey</span>
+          <span className="text-highlight text-xl uppercase tracking-wider mb-4 block">
+            Our Journey
+          </span>
           <h2 className="text-5xl font-light mb-6">
-            Achievements & <span className="font-bold text-white">Experience</span>
+            Achievements &{" "}
+            <span className="font-bold text-white">Experience</span>
           </h2>
         </motion.div>
 
@@ -85,10 +91,16 @@ const Experience: React.FC = () => {
               className="relative group"
             >
               <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-highlight/50 transition-all duration-300">
-                <div className="text-highlight text-5xl font-bold mb-4">{achievement.year}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{achievement.title}</h3>
+                <div className="text-highlight text-5xl font-bold mb-4">
+                  {achievement.year}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {achievement.title}
+                </h3>
                 <p className="text-gray-300 mb-6">{achievement.description}</p>
-                <div className="text-2xl font-bold text-white">{achievement.stats}</div>
+                <div className="text-2xl font-bold text-white">
+                  {achievement.stats}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -103,7 +115,7 @@ const Experience: React.FC = () => {
           >
             Organizations We're Part Of
           </motion.h3>
-          
+
           <div className="grid md:grid-cols-3 gap-12">
             {organizations.map((org, index) => (
               <motion.div
@@ -115,14 +127,16 @@ const Experience: React.FC = () => {
               >
                 <div className="relative overflow-hidden rounded-2xl">
                   <div className="aspect-video">
-                    <img 
-                      src={org.logo} 
+                    <img
+                      src={org.logo}
                       alt={org.name}
                       className="w-full h-full object-cover filter brightness-50 group-hover:brightness-75 transition-all duration-300"
                     />
                   </div>
                   <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
-                    <h4 className="text-xl font-bold text-white mb-2">{org.name}</h4>
+                    <h4 className="text-xl font-bold text-white mb-2">
+                      {org.name}
+                    </h4>
                     <p className="text-highlight mb-1">{org.role}</p>
                     <p className="text-gray-300 text-sm">{org.period}</p>
                   </div>

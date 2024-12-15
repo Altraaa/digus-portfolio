@@ -1,26 +1,15 @@
-import React from 'react';
-import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-import Projects from './components/Projects/Projects';
-import Experience from './components/Experience/Experience';
-import About from './components/About/About';
-import Footer from './components/Footer/Footer';
-import { Contact } from './components/Contact/Contact';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomeView from './Views/HomeView';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <div className="bg-primary">
-        <About />
-        <Projects />
-        <Experience />
-        <Contact />
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+      </Routes>
+      
+    </Router>
   );
-};
+}
 
 export default App;

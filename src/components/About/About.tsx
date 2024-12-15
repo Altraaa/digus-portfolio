@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-black/60" id="about">
-      <div className="container mx-auto px-6 lg:px-16">
+    <section className="py-24 bg-gradient-to-b from-black to-black/60" id="about">
+      <div className="container mx-auto px-6 lg:px-8 xl:px-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left Side - Biography */}
           <motion.div
@@ -14,13 +14,13 @@ const About: React.FC = () => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-4xl font-light">
+              <h2 className="text-4xl font-light xl:text-5xl">
                 About <span className="font-bold bg-gradient-to-r from-primary via-highlight to-accent bg-clip-text text-transparent">Me</span>
               </h2>
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
             </div>
 
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed xl:text-xl">
               Seorang arsitek dan desainer dengan passion dalam menciptakan ruang yang memadukan 
               estetika kontemporer dengan teknologi modern. Dengan pengalaman lebih dari 5 tahun 
               dalam industri arsitektur, saya telah mengembangkan keahlian dalam merancang 
