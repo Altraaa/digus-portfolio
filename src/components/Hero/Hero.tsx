@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <img
           src={HeroImage}
           alt="background"
-          className="w-full h-full object-cover filter brightness-[0.3]"
+          className="w-full h-full object-cover filter brightness-[0.4]"
         />
       </motion.div>
 

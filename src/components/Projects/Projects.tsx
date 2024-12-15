@@ -142,8 +142,12 @@ const Projects: React.FC = () => {
           />
         </AnimatePresence>
       </motion.div>
-  {/* Content */}
-      <div className="relative z-10 py-20">
+      
+      {/* Bottom Gradient Overlay */}
+      <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-b from-transparent via-gray-900/50 to-gray-900 z-10" />
+
+      {/* Content */}
+      <div className="relative z-20 py-20">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
