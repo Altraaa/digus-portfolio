@@ -2,8 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Dito from '../../assets/HeroUserDito.png';
 import HeroImage from '../../assets/HeroImage.png';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
+  
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+  };
+
   return (
     <section className="h-screen relative overflow-hidden" id="home">
       {/* Background dengan efek parallax */}
@@ -46,11 +56,13 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6"
             >
-              <button className="px-6 sm:px-8 py-3 bg-highlight rounded-full hover:bg-white hover:text-black transition-all duration-300">
+             <Link to="/project">
+               <button className="px-6 sm:px-8 py-3 bg-highlight rounded-full hover:bg-white hover:text-black transition-all duration-300">
                 Explore Projects
               </button>
+             </Link>
               <button className="px-6 sm:px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-all duration-300">
-                Contact Us
+                <a href="#contact"  onClick={handleContactClick}>Contact Us</a>
               </button>
             </motion.div>
           </motion.div>

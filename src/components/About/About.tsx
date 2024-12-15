@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   return (
     <section
-      className="py-24 bg-gradient-to-b from-black to-black/60"
+      className="py-24 pb-36 bg-gradient-to-b from-black to-black/60"
       id="about"
     >
       <div className="container mx-auto px-6 lg:px-8 xl:px-24">
@@ -27,21 +27,15 @@ const About: React.FC = () => {
             </div>
 
             <p className="text-gray-400 leading-relaxed xl:text-xl">
-              Seorang arsitek dan desainer dengan passion dalam menciptakan
-              ruang yang memadukan estetika kontemporer dengan teknologi modern.
-              Dengan pengalaman lebih dari 5 tahun dalam industri arsitektur,
-              saya telah mengembangkan keahlian dalam merancang bangunan yang
-              tidak hanya indah secara visual, tetapi juga fungsional dan
-              berkelanjutan.
+              A creative interior designer with hands-on experience in 3D
+              rendering and photorealistic visualizations. Committed to
+              designing functional, aesthetically pleasing spaces that enhance
+              user experience and exceed client expectations. Passionate about
+              creating environments that inspire and elevate daily life.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              {[
-                "Minimalist",
-                "Contemporary",
-                "Sustainable",
-                "Smart Building",
-              ].map((tag) => (
+              {["Creative", "Innovative", "Imaginative"].map((tag) => (
                 <span
                   key={tag}
                   className="px-4 py-2 text-sm bg-white/5 border border-white/10 rounded-full text-gray-300"
@@ -62,10 +56,10 @@ const About: React.FC = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-6">
               {[
-                { number: "5+", label: "Years Experience" },
-                { number: "50+", label: "Projects Completed" },
-                { number: "30+", label: "Happy Clients" },
-                { number: "15+", label: "Awards Winning" },
+                { number: "2+", label: "Years Experience" },
+                { number: "20+", label: "Projects Completed" },
+                { number: "20+", label: "Technical Skills" },
+                { number: "12+", label: "Happy Clients" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -90,14 +84,9 @@ const About: React.FC = () => {
               <div className="space-y-4">
                 {[
                   {
-                    year: "2020 - Present",
-                    role: "Senior Architect",
-                    company: "Modern Studio",
-                  },
-                  {
-                    year: "2018 - 2020",
-                    role: "Lead Designer",
-                    company: "Creative Arch",
+                    year: "2023 - Present",
+                    role: "Freelance Interior Designer",
+                    company: "Own Company",
                   },
                 ].map((exp, index) => (
                   <motion.div

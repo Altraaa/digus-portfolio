@@ -1,7 +1,7 @@
- import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-scroll';
-import Button from '../ui/Button';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Button from "../ui/Button";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -14,17 +14,17 @@ const menuVariants = {
     transition: {
       type: "spring",
       stiffness: 400,
-      damping: 40
-    }
+      damping: 40,
+    },
   },
   open: {
     x: 0,
     transition: {
       type: "spring",
       stiffness: 400,
-      damping: 40
-    }
-  }
+      damping: 40,
+    },
+  },
 };
 
 const linkVariants = {
@@ -34,12 +34,39 @@ const linkVariants = {
     opacity: 1,
     transition: {
       delay: i * 0.1,
-    }
-  })
+    },
+  }),
 };
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
-  const menuItems = ["home", "about", "projects", "experience", "contact"];
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onClose();
+    if (!isHomePage) {
+      navigate("/", { state: { scrollToContact: true } });
+    } else {
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const menuItems = [
+    { path: "/", label: "home" },
+    { path: "/about", label: "about" },
+    { path: "/project", label: "project" },
+    { path: "/experience", label: "experience" },
+  ];
+
+  const menuSosial = [
+    { link: "https://linked.com/Chandrawinata", label: "LinkedIn" },
+    { link: "https://instagram.com/ditochandra_", label: "Instagram" },
+  ]
 
   return (
     <AnimatePresence>
@@ -67,15 +94,28 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               onClick={onClose}
               className="absolute top-6 right-6 text-gray-400 hover:text-white"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
             {/* Logo */}
             <div className="mb-12">
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                DI<span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">GUS</span>
+                DI
+                <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                  GUS
+                </span>
               </span>
             </div>
 
@@ -83,7 +123,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             <nav className="space-y-8">
               {menuItems.map((item, i) => (
                 <motion.div
-                  key={item}
+                  key={item.label}
                   variants={linkVariants}
                   custom={i}
                   initial="closed"
@@ -91,18 +131,31 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   exit="closed"
                 >
                   <Link
-                    to={item}
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={800}
+                    to={item.path}
                     onClick={onClose}
                     className="block text-lg text-gray-400 hover:text-white transition-colors capitalize"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </motion.div>
               ))}
+              {isHomePage && (
+                <a
+                  href="#contact"
+                  onClick={handleContactClick}
+                  className="relative group cursor-pointer px-1"
+                >
+                  <p className="text-sm mt-2 uppercase tracking-wider text-gray-300 hover:text-white transition-colors">
+                    contact
+                  </p>
+                  <motion.div
+                    className="absolute -bottom-1 left-0 h-[1px] bg-highlight origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </a>
+              )}
             </nav>
 
             {/* Social Links */}
@@ -116,13 +169,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 Download CV
               </Button>
               <div className="flex justify-center gap-6 mt-6">
-                {['GitHub', 'LinkedIn', 'Twitter'].map((social) => (
+                {menuSosial.map((social) => (
                   <a
-                    key={social}
-                    href="#"
+                    key={social.label}
+                    href={social.link}
+                    target="_blank"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    {social}
+                    {social.label}
                   </a>
                 ))}
               </div>

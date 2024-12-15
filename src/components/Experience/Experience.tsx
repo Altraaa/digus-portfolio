@@ -1,12 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import OSIS from "../../assets/OSIS.jpg";
+import ForkomRohis from "../../assets/Rohis.jpg"
+import Rohis from "../../assets/Rohisrohisan.jpg"
 
 interface Achievement {
   year: string;
   title: string;
   description: string;
-  stats: string;
 }
 
 interface Organization {
@@ -18,43 +20,42 @@ interface Organization {
 
 const achievements: Achievement[] = [
   {
+    year: "2024",
+    title: "Kampung Kunir Tourism Innovation",
+    description: "First Place of International Collaboration Project",
+  },
+  {
     year: "2023",
-    title: "Best Architecture Design",
-    description: "Winner of International Design Excellence Awards",
-    stats: "150+ Projects",
+    title: "Achievement (ONPA) Competition",
+    description:
+      "Second Place, National Olympiad for Academic Achievement (ONPA) Competition",
   },
   {
-    year: "2022",
-    title: "Sustainable Building",
-    description: "Green Building Council Certificate",
-    stats: "45+ Countries",
-  },
-  {
-    year: "2021",
-    title: "Innovation Award",
-    description: "Smart Building Technology Implementation",
-    stats: "200+ Clients",
+    year: "2023",
+    title: "Indonesian Language Field and Gold Medalist",
+    description:
+      "National Olympiad for Academic Achievement (ONPA) Competition",
   },
 ];
 
 const organizations: Organization[] = [
   {
-    logo: "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
-    name: "Royal Institute of Architects",
-    role: "Certified Member",
-    period: "2020 - Present",
+    logo: OSIS,
+    name: "OSIS SMK Negeri 1 Denpasar",
+    role: "Head of Human Rights and Humanitarian Division",
+    period: "2022 - 2023",
   },
   {
-    logo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    name: "World Green Building Council",
-    role: "Gold Partner",
-    period: "2019 - Present",
+    logo: Rohis,
+    name: "Rohis SMK Negeri 1 Denpasar",
+    role: "Secretary",
+    period: "2022 - 2024",
   },
   {
-    logo: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
-    name: "International Design Association",
-    role: "Executive Member",
-    period: "2018 - Present",
+    logo: ForkomRohis,
+    name: "FORKOM ROHIS",
+    role: "Public Relation Member",
+    period: "2023 - 2024",
   },
 ];
 
@@ -96,7 +97,7 @@ const Experience: React.FC = () => {
             transition={{ duration: 0.6, delay: index * 0.2 }}
             className="relative group"
           >
-            <div className="p-8 rounded-3xl backdrop-blur-lg border border-white/10 shadow-lg bg-white/5 transition-all duration-300 group-hover:bg-purple-500/10">
+            <div className="p-8 min-h-64 rounded-3xl backdrop-blur-lg border border-white/10 shadow-2xl bg-white/5 transition-all duration-300 group-hover:bg-purple-500/10">
               <h3 className="text-4xl font-bold text-purple-400 mb-4">
                 {achievement.year}
               </h3>
@@ -105,9 +106,6 @@ const Experience: React.FC = () => {
               </h4>
               <p className="text-gray-300 mb-6 text-sm leading-relaxed">
                 {achievement.description}
-              </p>
-              <p className="text-lg font-bold text-blue-300">
-                {achievement.stats}
               </p>
             </div>
           </motion.div>

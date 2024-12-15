@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="hidden md:flex items-center space-x-12"
+              className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-12"
             >
               {[
                 { path: "/", label: "home" },
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
               className="hidden md:flex items-center space-x-12"
             >
               <Button variant="outline-white" className="text-sm">
-                <a href="">Download CV {">"}</a>
+                <a href="https://drive.google.com/file/d/1ZXwBJvOMhd9hmhixDxmHYD8KbKPP3Nim/view" target="_blank" >Download CV {">"}</a>
               </Button>
             </motion.div>
 

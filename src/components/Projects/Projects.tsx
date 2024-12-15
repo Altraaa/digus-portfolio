@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import Graphic from "../../assets/Graphic.png"
+import Render from "../../assets/Render.png"
+import Resident from "../../assets/Resident.png"
+import School from "../../assets/School.png"
 
 interface Project {
   id: number;
@@ -17,7 +21,7 @@ const projects: Project[] = [
     title: "Graphics Design",
     category: "Comercial",
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      Graphic,
     description: "Desain villa modern dengan konsep minimalis",
     route: "/project/graphics"
   },
@@ -26,7 +30,7 @@ const projects: Project[] = [
     title: "Rendering Project",
     category: "Job",
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      Render,
     description: "Gedung perkantoran dengan teknologi smart building",
     route: "/project/rendering"
   },
@@ -35,7 +39,7 @@ const projects: Project[] = [
     title: "Residential Project",
     category: "Residential",
     image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      Resident,
     description: "Rumah ramah lingkungan dengan sistem energi terbarukan",
     route: "/project/residential"
   },
@@ -44,7 +48,7 @@ const projects: Project[] = [
     title: "School Project",
     category: "School",
     image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      School,
     description: "Apartemen mewah dengan sentuhan modern minimalis",
     route: "/project/school"
   },

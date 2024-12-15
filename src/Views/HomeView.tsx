@@ -9,8 +9,8 @@ const HomeView = () => {
   return (
     <>
       <Navbar />
+      <Hero />
       <div className="overflow-hidden bg-primary">
-        <Hero />
         <About />
       </div>
       <div className="overflow-hidden bg-black">

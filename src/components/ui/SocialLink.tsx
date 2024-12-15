@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 interface SocialLinkProps {
   icon: React.ComponentType;
@@ -11,7 +11,7 @@ export const SocialLink: React.FC<SocialLinkProps> = ({
   icon: Icon,
   title,
   value,
-  link
+  link,
 }) => {
   return (
     <motion.a
@@ -23,8 +23,10 @@ export const SocialLink: React.FC<SocialLinkProps> = ({
       className="flex items-center p-6 bg-white/5 border border-white/10 rounded-lg 
         hover:bg-white/10 transition-colors group"
     >
-      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center 
-        text-highlight group-hover:text-white transition-colors">
+      <div
+        className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center 
+        text-highlight group-hover:text-white transition-colors"
+      >
         <Icon />
       </div>
       <div className="ml-6">
@@ -37,10 +39,15 @@ export const SocialLink: React.FC<SocialLinkProps> = ({
         viewBox="0 0 24 24"
         stroke="currentColor"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M9 5l7 7-7 7"
+        />
       </svg>
     </motion.a>
   );
-}; 
+};
 
 export default SocialLink;

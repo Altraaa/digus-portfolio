@@ -4,19 +4,19 @@ export const socialLinks = [
   {
     icon: EmailIcon,
     title: "Email",
-    value: "contact@digus.com",
-    link: "mailto:contact@digus.com"
+    value: "ditobaguscandra95@gmail.com",
+    link: "mailto:ditobaguscandra95@gmail.com"
   },
   {
     icon: WhatsAppIcon,
     title: "WhatsApp",
-    value: "+62 123 456 789",
-    link: "https://wa.me/62123456789"
+    value: "+62 812-3898-0336",
+    link: "https://wa.me/+6281238980336"
   },
   {
     icon: InstagramIcon,
     title: "Instagram",
-    value: "@digus.studio",
-    link: "https://instagram.com/digus.studio"
+    value: "ditochandra_",
+    link: "https://instagram.com/ditochandra_"
   }
 ]; 
