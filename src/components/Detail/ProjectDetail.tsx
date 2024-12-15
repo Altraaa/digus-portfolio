@@ -9,55 +9,50 @@ import Resident from "../../assets/Resident.png";
 import School from "../../assets/School.png";
 
 const cards = [
-   {
+  {
     id: 1,
     name: "Rendering Projects",
-    description: "lorem ipsum dolor sit amet",
-    image:
-      Render,
-    background:
-      Render,
-    route: "/project/rendering"
+    description:
+      "High-quality interior and exterior visualizations that bring designs to life with precision, detail, and stunning realism.",
+    image: Render,
+    background: Render,
+    route: "/project/rendering",
   },
   {
     id: 2,
     name: "Residential Projects",
-    description: "lorem ipsum dolor sit amet",
-    image:
-      Resident,
-    background:
-      Resident,
-    route: "/project/school"
+    description:
+      "Designing dream homes with a perfect balance of comfort, elegance, and modern architectural touches for everyday living.",
+    image: Resident,
+    background: Resident,
+    route: "/project/school",
   },
-   {
+  {
     id: 3,
     name: "School Projects",
-    description: "lorem ipsum dolor sit amet",
-    image:
-      School,
-    background:
-      School, 
-    route: "/project/school"
+    description:
+      "Projects completed during my time at SMK Negeri 1 Denpasar, focusing on Building Modeling and Information Design, showcasing foundational skills in construction and design visualization.",
+    image: School,
+    background: School,
+    route: "/project/school",
   },
   {
     id: 4,
     name: "University Projects",
-    description: "lorem ipsum dolor sit amet",
-    image:
-      UniversityHero,
-    background:
-      UniversityHero,
-    route: "/university"
+    description:
+      "A showcase of my interior design projects from President University, reflecting creativity, technical skills, and innovative solutions developed throughout my academic journey.",
+    image: UniversityHero,
+    background: UniversityHero,
+    route: "/university",
   },
   {
     id: 5,
     name: "Graphics Design",
-    description: "lorem ipsum dolor sit amet",
-    image:
-      Graphic,
-    background:
-      Graphic,
-    route: "/project/graphics"
+    description:
+      "A curated showcase of visually captivating designs that blend creativity and functionality to tell compelling stories.",
+    image: Graphic,
+    background: Graphic,
+    route: "/project/graphics",
   },
 ]; 
 
@@ -181,7 +176,7 @@ const ProjectDetail: React.FC = () => {
                             <h3 className="text-xl md:text-2xl font-semibold text-white mb-1 md:mb-2">
                               {card.name}
                             </h3>
-                            <p className="text-gray-400 text-xs md:text-sm">
+                            <p className="text-gray-200 text-xs md:text-sm">
                               {card.description}
                             </p>
                           </div>

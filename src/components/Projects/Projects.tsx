@@ -21,47 +21,45 @@ const projects: Project[] = [
     id: 1,
     title: "Rendering Project",
     category: "Job",
-    image:
-      Render,
-    description: "Gedung perkantoran dengan teknologi smart building",
-    route: "/project/rendering"
+    image: Render,
+    description:
+      "High-quality interior and exterior visualizations that bring designs to life with precision, detail, and stunning realism.",
+    route: "/project/rendering",
   },
   {
     id: 2,
     title: "Residential Project",
     category: "Residential",
-    image:
-      Resident,
-    description: "Rumah ramah lingkungan dengan sistem energi terbarukan",
-    route: "/project/residential"
+    image: Resident,
+    description:
+      "Designing dream homes with a perfect balance of comfort, elegance, and modern architectural touches for everyday living.",
+    route: "/project/residential",
   },
   {
     id: 3,
     title: "School Project",
     category: "School",
-    image:
-      School,
-    description: "Apartemen mewah dengan sentuhan modern minimalis",
-    route: "/project/school"
+    image: School,
+    description: "Projects completed during my time at SMK Negeri 1 Denpasar, focusing on Building Modeling and Information Design, showcasing foundational skills in construction and design visualization.",
+    route: "/project/school",
   },
   {
     id: 4,
     title: "University Project",
     category: "University",
-    image:
-      UniversityHero,
-    description: "Studio kreatif dengan konsep open space",
-    route: "/university"
+    image: UniversityHero,
+    description: "A showcase of my interior design projects from President University, reflecting creativity, technical skills, and innovative solutions developed throughout my academic journey.",
+    route: "/university",
   },
   {
-    id: 1,
+    id: 5,
     title: "Graphics Design",
     category: "Comercial",
-    image:
-      Graphic,
-    description: "Desain villa modern dengan konsep minimalis",
-    route: "/project/graphics"
-  }
+    image: Graphic,
+    description:
+      "A curated showcase of visually captivating designs that blend creativity and functionality to tell compelling stories.",
+    route: "/project/graphics",
+  },
 ];
 
 const container = {

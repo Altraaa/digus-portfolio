@@ -47,8 +47,8 @@ const Hero: React.FC = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg text-gray-300 max-w-md">
-              Menciptakan ruang yang memadukan estetika kontemporer dengan
-              teknologi masa depan.
+              Creating spaces that combine contemporary aesthetics with future
+              technology.
             </p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -56,13 +56,15 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6"
             >
-             <Link to="/project">
-               <button className="px-6 sm:px-8 py-3 bg-highlight rounded-full hover:bg-white hover:text-black transition-all duration-300">
-                Explore Projects
-              </button>
-             </Link>
+              <Link to="/project">
+                <button className="px-6 sm:px-8 py-3 bg-highlight rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                  Explore Projects
+                </button>
+              </Link>
               <button className="px-6 sm:px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-all duration-300">
-                <a href="#contact"  onClick={handleContactClick}>Contact Us</a>
+                <a href="#contact" onClick={handleContactClick}>
+                  Contact Us
+                </a>
               </button>
             </motion.div>
           </motion.div>

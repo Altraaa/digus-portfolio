@@ -119,7 +119,7 @@ const Experience: React.FC = () => {
         transition={{ delay: 0.3 }}
         className="text-3xl font-medium text-center text-white mt-24 mb-10"
       >
-        Organizations We're Part Of
+        My Organizations Journey
       </motion.h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
