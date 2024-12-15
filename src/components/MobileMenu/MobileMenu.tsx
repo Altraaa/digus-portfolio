@@ -41,7 +41,7 @@ const linkVariants = {
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/home";
 
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -57,10 +57,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   };
 
   const menuItems = [
-    { path: "/", label: "home" },
-    { path: "/about", label: "about" },
+    { path: "/home", label: "home" },
+    // { path: "/about", label: "about" },
     { path: "/project", label: "project" },
-    { path: "/experience", label: "experience" },
+    // { path: "/experience", label: "experience" },
+    { path: "/", label: "task" },
   ];
 
   const menuSosial = [

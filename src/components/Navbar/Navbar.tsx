@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/home";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,10 +74,11 @@ const Navbar: React.FC = () => {
               className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-12"
             >
               {[
-                { path: "/", label: "home" },
-                { path: "/about", label: "about" },
+                { path: "/home", label: "home" },
+                // { path: "/about", label: "about" },
                 { path: "/project", label: "project" },
-                { path: "/experience", label: "experience" }
+                { path: "/", label: "task" },
+                // { path: "/experience", label: "experience" }
               ].map((item) => (
                 <Link
                   key={item.label}
