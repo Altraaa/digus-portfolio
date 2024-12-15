@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import UniversityHero from "../../assets/UniversityHero.jpg";
 import Graphic from "../../assets/Graphic.png"
 import Render from "../../assets/Render.png"
 import Resident from "../../assets/Resident.png"
@@ -18,15 +19,6 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Graphics Design",
-    category: "Comercial",
-    image:
-      Graphic,
-    description: "Desain villa modern dengan konsep minimalis",
-    route: "/project/graphics"
-  },
-  {
-    id: 2,
     title: "Rendering Project",
     category: "Job",
     image:
@@ -35,7 +27,7 @@ const projects: Project[] = [
     route: "/project/rendering"
   },
   {
-    id: 3,
+    id: 2,
     title: "Residential Project",
     category: "Residential",
     image:
@@ -44,7 +36,7 @@ const projects: Project[] = [
     route: "/project/residential"
   },
   {
-    id: 4,
+    id: 3,
     title: "School Project",
     category: "School",
     image:
@@ -53,13 +45,22 @@ const projects: Project[] = [
     route: "/project/school"
   },
   {
-    id: 5,
+    id: 4,
     title: "University Project",
     category: "University",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      UniversityHero,
     description: "Studio kreatif dengan konsep open space",
     route: "/university"
+  },
+  {
+    id: 1,
+    title: "Graphics Design",
+    category: "Comercial",
+    image:
+      Graphic,
+    description: "Desain villa modern dengan konsep minimalis",
+    route: "/project/graphics"
   }
 ];
 

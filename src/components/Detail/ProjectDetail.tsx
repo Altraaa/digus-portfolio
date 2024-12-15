@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
+import UniversityHero from "../../assets/UniversityHero.jpg";
 import { Link } from "react-router-dom";
 import Graphic from "../../assets/Graphic.png";
 import Render from "../../assets/Render.png";
@@ -8,18 +9,8 @@ import Resident from "../../assets/Resident.png";
 import School from "../../assets/School.png";
 
 const cards = [
-  {
-    id: 1,
-    name: "Graphics Design",
-    description: "lorem ipsum dolor sit amet",
-    image:
-      Graphic,
-    background:
-      Graphic,
-    route: "/project/graphics"
-  },
    {
-    id: 3,
+    id: 1,
     name: "Rendering Projects",
     description: "lorem ipsum dolor sit amet",
     image:
@@ -29,7 +20,7 @@ const cards = [
     route: "/project/rendering"
   },
   {
-    id: 3,
+    id: 2,
     name: "Residential Projects",
     description: "lorem ipsum dolor sit amet",
     image:
@@ -49,14 +40,24 @@ const cards = [
     route: "/project/school"
   },
   {
-    id: 5,
+    id: 4,
     name: "University Projects",
     description: "lorem ipsum dolor sit amet",
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      UniversityHero,
     background:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      UniversityHero,
     route: "/university"
+  },
+  {
+    id: 5,
+    name: "Graphics Design",
+    description: "lorem ipsum dolor sit amet",
+    image:
+      Graphic,
+    background:
+      Graphic,
+    route: "/project/graphics"
   },
 ]; 
 

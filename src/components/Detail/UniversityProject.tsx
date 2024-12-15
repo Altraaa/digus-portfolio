@@ -15,6 +15,7 @@ interface ProjectDescription {
   designPrinciple?: string;
   toolsUsed: string[];
   moodLines?: string;
+  originate?: string;
 }
 
 interface ProjectData {
@@ -55,7 +56,7 @@ interface ProjectData {
   stats: {
     campus: string;
     name: string;
-    role: string;
+    major: string;
     lecturer: string;
   };
 }
@@ -133,7 +134,7 @@ const projectData: ProjectData = {
           "In this project, I recreated one of the traditional carving designs from the Indonesian archipelago, specifically the 'Pa'kapu' Baka' motif, a typical Toraja carving. The purpose of this project is to promote a deeper appreciation and understanding of Indonesia's rich cultural heritage. By reconstructing this design, I aim to highlight the importance of preserving and celebrating our traditional art forms.",
         ],
         toolsUsed: ["Concorde paper", "pencil", "poster paint"],
-        moodLines: "South Sulawesi",
+        originate: "South Sulawesi",
       },
       images: NirmanaArchipelago,
     },
@@ -144,7 +145,7 @@ const projectData: ProjectData = {
           "This image showcases the combination of two traditional Toraja carving designs to create a new, modern design. The first design, Pa’ Kapu’ Baka’, features bold, symmetrical patterns, while the second design, Toraja Wood Carving, highlights elongated shapes with intricate details. By merging these two elements, a new composition, Design 2, is created, which is visually rich and suitable for applications like Wall Panels or Partitions. The project highlights the beauty of Indonesian cultural heritage while introducing a fresh interpretation for contemporary use.",
         ],
         toolsUsed: ["Concorde paper", "pencil", "paint poster"],
-        moodLines: "South Sulawesi",
+        originate: "South Sulawesi",
       },
       image: [Project5, NirmanaTransformation],
     },
@@ -152,7 +153,7 @@ const projectData: ProjectData = {
   stats: {
     campus: "President University",
     name: "Dito Bagus Chandrawinata",
-    role: "College Student",
+    major: "Interior Design",
     lecturer: "Ms. Afina Nisa Aulia, S.Ds, M.Ds",
   },
 };
@@ -222,6 +223,19 @@ const ProjectDescriptionSection: React.FC<{
             </span>
             <span className="text-white text-sm md:text-base lg:text-lg font-extralight tracking-wider">
               {description.moodLines}
+            </span>
+          </motion.div>
+        )}
+        {description.originate && (
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="backdrop-blur-md bg-white/5 rounded-lg md:rounded-xl p-3 md:p-4 lg:p-6 border border-white/10"
+          >
+            <span className="text-blue-400 text-xs md:text-sm lg:text-sm tracking-[0.2em] block mb-1 md:mb-1.5 lg:mb-2 font-light">
+              ORIGINATE
+            </span>
+            <span className="text-white text-sm md:text-base lg:text-lg font-extralight tracking-wider">
+              {description.originate}
             </span>
           </motion.div>
         )}
@@ -329,10 +343,10 @@ const UniversityProject: React.FC = () => {
           </div>
           <div>
             <h3 className="text-blue-400 text-xs md:text-sm lg:text-sm tracking-[0.2em] mb-1 md:mb-1.5 lg:mb-2 font-light">
-              ROLE
+              MAJOR
             </h3>
             <p className="text-white text-sm md:text-base lg:text-base font-extralight tracking-wider">
-              {projectData.stats.role}
+              {projectData.stats.major}
             </p>
           </div>
           <div>
